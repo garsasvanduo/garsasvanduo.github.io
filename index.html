@@ -1,5 +1,238 @@
-<html>
-  <body>
-    GGG NASA
-  </body>
+<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Bioakustinės akvaterapijos ir tyrimų centras – garso, vandens ir biologinių signalų sąveikos tyrimai." />
+  <title>Bioakustinės akvaterapijos ir tyrimų centras</title>
+
+  <style>
+    :root{
+      --bg: #070a0f;
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.74);
+      --line: rgba(255,255,255,.22);
+      --shadow: 0 10px 30px rgba(0,0,0,.30);
+      --radius: 18px;
+      --max: 1024px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    /* HERO BACKGROUND (lighter overlay than before) */
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: clamp(20px, 4vw, 42px);
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(1200px 600px at 50% 12%, rgba(255,255,255,.22), transparent 62%),
+        linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.45)),
+        url("Glowing%20waves%20and%20gentle%20ripples.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Optional subtle grain (can be removed if you prefer totally clean) */
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+      opacity: .30;
+      pointer-events: none;
+    }
+
+    .wrap{
+      width: 100%;
+      max-width: var(--max);
+      position: relative;
+      z-index: 1;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      padding: 6px 2px 18px 2px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      text-decoration:none;
+      color: var(--text);
+      font-weight: 650;
+      letter-spacing: .2px;
+    }
+
+    .logo{
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(255,255,255,.30), rgba(255,255,255,.10));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .logo::after{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background: radial-gradient(circle at 40% 40%, rgba(255,255,255,.35), transparent 60%);
+      transform: rotate(20deg);
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.20);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      white-space: nowrap;
+    }
+
+    .card{
+      padding: clamp(18px, 3vw, 30px);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.10);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+    }
+
+    h1{
+      margin: 10px 0 12px;
+      font-size: clamp(28px, 5vw, 46px);
+      line-height: 1.1;
+      letter-spacing: -0.6px;
+    }
+
+    .subtitle{
+      margin: 0 0 18px;
+      font-size: clamp(16px, 2.4vw, 19px);
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.14);
+      color: var(--text);
+      text-decoration:none;
+      font-weight: 650;
+      box-shadow: 0 8px 20px rgba(0,0,0,.20);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      user-select:none;
+    }
+    .btn:hover{ background: rgba(255,255,255,.20); transform: translateY(-1px); }
+    .btn:active{ transform: translateY(0px); }
+
+    .fineprint{
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: var(--radius);
+      background: rgba(0,0,0,.16);
+      border: 1px dashed rgba(255,255,255,.24);
+      color: rgba(255,255,255,.78);
+      font-size: 12.5px;
+    }
+
+    .footer{
+      margin-top: 14px;
+      color: rgba(255,255,255,.62);
+      font-size: 12.5px;
+      padding: 10px 2px 0 2px;
+    }
+
+    @media (min-width: 820px){
+      .card{ padding: 34px; }
+    }
+
+    :focus-visible{
+      outline: 3px solid rgba(255,255,255,.55);
+      outline-offset: 3px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="hero">
+    <div class="wrap">
+      <div class="topbar">
+        <a class="brand" href="#">
+          <span class="logo" aria-hidden="true"></span>
+          <span>Bioakustinės akvaterapijos ir tyrimų centras</span>
+        </a>
+        <span class="pill" title="Eksperimentinė veikla">
+          🔬 Tyrimai • 🫧 Vanduo • 🎧 Akustika
+        </span>
+      </div>
+
+      <section class="card">
+        <!-- PALIEKAMAS JŪSŲ TEKSTAS -->
+        <h1>Garso, vandens ir biologinių signalų sąveikos tyrimai</h1>
+
+        <!-- PALIEKAMAS JŪSŲ TEKSTAS -->
+        <p class="subtitle">
+          Centras – tai eksperimentinė erdvė, kurioje tiriama, kaip akustiniai signalai, vibracija ir vandens aplinka veikia
+          žmogaus pojūčius ir savijautą. Veikla orientuota į technologinius tyrimus, prototipų kūrimą ir demonstravimą.
+        </p>
+
+        <!-- VIENAS MYGTUKAS PRADŽIAI -->
+        <div class="actions">
+          <a class="btn" href="mailto:info@garsasvanduo.lt">Susisiekti el. paštu</a>
+        </div>
+
+        <!-- TRUMPAS, RAMUS DISCLAIMER -->
+        <div class="fineprint">
+          Centras nevykdo medicininės diagnostikos ar gydymo. Veikla – ne medicininio pobūdžio.
+        </div>
+
+        <div class="footer">
+          © <span id="y"></span> garsasvanduo.lt • Bioakustinės akvaterapijos ir tyrimų centras
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
