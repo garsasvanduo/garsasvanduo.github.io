@@ -229,6 +229,14 @@
       outline-offset: 3px;
       border-radius: 12px;
     }
+    #email a,
+    #email a:visited,
+    #email a:hover,
+    #email a:active,
+    #email a:focus {
+      color: inherit;
+      text-decoration: none;
+    }
   </style>
 </head>
 
@@ -255,7 +263,7 @@
         </p>
 
         <div class="actions">
-          <a class="btn" href="mailto:info@garsasvanduo.lt">Susisiekti el. paštu</a>
+          <button id="email" class="btn" type="button">Parodyti el. paštą</button>
         </div>
 
         <div class="fineprint">
@@ -271,6 +279,17 @@
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+    const xuser = "kontaktai";
+    const xdomain = "garsasvanduo.lt";
+    const xaddr = `${xuser}@${xdomain}`;
+    document.getElementById("email").addEventListener("click", () => {
+      const a = document.createElement("a");
+      a.href = "mailto:" + xaddr;
+      a.textContent = xaddr;
+      const holder = document.getElementById("email");
+      holder.innerHTML = "";
+      holder.appendChild(a);
+    });
   </script>
 </body>
 </html>
