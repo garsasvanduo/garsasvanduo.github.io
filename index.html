@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Bioakustinės akvaterapijos ir tyrimų centras – garso, vandens ir biologinių signalų sąveikos tyrimai." />
+  <meta name="description" content="Bioakustinės akvaterapijos ir tyrimų centras – garso, vandens ir fiziologinių signalų sąveikos tyrimai, prototipai bei taikymai." />
   <title>Bioakustinės akvaterapijos ir tyrimų centras</title>
 
   <style>
@@ -27,7 +27,6 @@
       line-height: 1.55;
     }
 
-    /* HERO BACKGROUND (lighter overlay than before) */
     .hero {
       min-height: 100svh;
       display: grid;
@@ -44,7 +43,6 @@
       background-repeat: no-repeat;
     }
 
-    /* Optional subtle grain (can be removed if you prefer totally clean) */
     .hero::before{
       content:"";
       position:absolute;
@@ -62,6 +60,7 @@
       z-index: 1;
     }
 
+    /* TOPBAR: desktop = horizontal */
     .topbar{
       display:flex;
       align-items:center;
@@ -78,6 +77,12 @@
       color: var(--text);
       font-weight: 650;
       letter-spacing: .2px;
+      min-width: 0;
+    }
+    .brand span:last-child{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .logo{
@@ -89,6 +94,7 @@
       box-shadow: var(--shadow);
       position: relative;
       overflow: hidden;
+      flex: 0 0 auto;
     }
     .logo::after{
       content:"";
@@ -111,6 +117,7 @@
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       white-space: nowrap;
+      flex: 0 0 auto;
     }
 
     .card{
@@ -121,6 +128,9 @@
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       box-shadow: var(--shadow);
+
+      /* ✅ centrinio teksto lygiavimas (skaitymui patogiausia) */
+      text-align: left;
     }
 
     h1{
@@ -128,13 +138,14 @@
       font-size: clamp(28px, 5vw, 46px);
       line-height: 1.1;
       letter-spacing: -0.6px;
+      max-width: 22ch;
     }
 
     .subtitle{
       margin: 0 0 18px;
       font-size: clamp(16px, 2.4vw, 19px);
       color: var(--muted);
-      max-width: 62ch;
+      max-width: 68ch;
     }
 
     .actions{
@@ -183,6 +194,27 @@
       .card{ padding: 34px; }
     }
 
+    /* ✅ MOBILE: topbar susiploti vertikaliai */
+    @media (max-width: 640px){
+      .topbar{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 10px;
+        padding-bottom: 14px;
+      }
+      .brand span:last-child{
+        white-space: normal; /* kad pavadinimas galėtų persikelti į kitą eilutę */
+        line-height: 1.2;
+      }
+      h1{
+        max-width: 28ch;
+      }
+      .btn{
+        width: 100%;
+      }
+    }
+
     :focus-visible{
       outline: 3px solid rgba(255,255,255,.55);
       outline-offset: 3px;
@@ -205,23 +237,20 @@
       </div>
 
       <section class="card">
-        <!-- PALIEKAMAS JŪSŲ TEKSTAS -->
-        <h1>Garso, vandens ir biologinių signalų sąveikos tyrimai</h1>
+        <h1>Garso, vandens ir fiziologinių signalų sąveikos tyrimai, prototipai bei taikymai</h1>
 
-        <!-- PALIEKAMAS JŪSŲ TEKSTAS -->
         <p class="subtitle">
-          Centras – tai eksperimentinė erdvė, kurioje tiriama, kaip akustiniai signalai, vibracija ir vandens aplinka veikia
-          žmogaus pojūčius ir savijautą. Veikla orientuota į technologinius tyrimus, prototipų kūrimą ir demonstravimą.
+          <b>Centras – tai eksperimentinė erdvė, kurioje tiriama, kaip akustiniai signalai, vibracija ir vandens aplinka veikia žmogaus pojūčius bei savijautą.</b><br>
+          Vykdomi technologiniai tyrimai, kuriami ir demonstruojami prototipai, analizuojant jų poveikį savijautai ir taikant telemetrinius fiziologinių signalų perdavimo sprendimus.
+          Taip pat vystomos jonizuoto vandens terpės, vandens kokybės zondai ir audio signalų davikliai.
         </p>
 
-        <!-- VIENAS MYGTUKAS PRADŽIAI -->
         <div class="actions">
           <a class="btn" href="mailto:info@garsasvanduo.lt">Susisiekti el. paštu</a>
         </div>
 
-        <!-- TRUMPAS, RAMUS DISCLAIMER -->
         <div class="fineprint">
-          Centras nevykdo medicininės diagnostikos ar gydymo. Veikla – ne medicininio pobūdžio.
+          Centro veikla nėra medicininio pobūdžio ir nėra skirta medicininei diagnostikai ar gydymui.
         </div>
 
         <div class="footer">
