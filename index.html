@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Bioakustinės akvaterapijos ir tyrimų centras – garso, vandens ir fiziologinių signalų sąveikos tyrimai, prototipai bei taikymai." />
-  <title>Bioakustinės akvaterapijos ir tyrimų centras</title>
+  <meta name="description" content="Bioakustiniai tyrimai ir eksperimentinė sveikatingumo technologija. Garso ir vandens sąveikos bei fiziologinių signalų tyrimai, prototipai ir taikymai. Bioacoustic research, acoustic and vibration research, physiological signal analysis, experimental wellness technology." />
+  <meta name="keywords" content="bioakustiniai tyrimai, garso ir vandens sąveikos tyrimai, fiziologinių signalų tyrimai, eksperimentinė sveikatingumo technologija, bioacoustic research, acoustic and vibration research, physiological signal analysis, experimental wellness technology" />
+  <title>Bioakustinės akvaterapijos ir tyrimų centras | Garso, vandens ir fiziologijos tyrimai</title>
 
   <style>
     :root{
@@ -51,6 +52,7 @@
       mix-blend-mode: overlay;
       opacity: .30;
       pointer-events: none;
+      overflow: visible;
     }
 
     .wrap{
@@ -175,6 +177,11 @@
       transition: transform .12s ease, background .12s ease, border-color .12s ease;
       user-select:none;
     }
+    .btn--sm{
+      padding: 6px 12px;
+      font-size: 14px;
+      border-radius: 12px;
+    }
     .btn:hover{ background: rgba(255,255,255,.20); transform: translateY(-1px); }
     .btn:active{ transform: translateY(0px); }
 
@@ -237,6 +244,9 @@
       color: inherit;
       text-decoration: none;
     }
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 
@@ -256,25 +266,41 @@
       <section class="card">
         <h1>Garso, vandens ir fiziologinių signalų sąveikos tyrimai, prototipai bei taikymai</h1>
 
+        <h2>Bioakustiniai tyrimai: garso, vandens ir fiziologinių signalų sąveika</h2>
         <p class="subtitle">
           <b>Centras – tai eksperimentinė erdvė, kurioje tiriama, kaip akustiniai signalai, vibracija ir vandens aplinka veikia žmogaus pojūčius bei savijautą.</b><br><br>
+        </p>
+        
+        <h2>Technologiniai prototipai ir taikomieji sprendimai</h2>
+        <p class="subtitle">
           Vykdomi technologiniai tyrimai, kuriami ir demonstruojami prototipai, analizuojant jų poveikį savijautai. Prireikus taikomi telemetriniai fiziologinių signalų perdavimo sprendimai. 
           Taip pat kuriami ir tiriami jonizuoto vandens terpės, vandens kokybės zondai bei audio signalų analizatoriai.<br><br>
           Veikla apima individualias taikomąsias sesijas ir eksperimentines demonstracines formas, orientuotas į technologinių sprendimų praktinį pritaikymą riboto masto aplinkoje.
         </p>
 
-        <div class="actions">
-          <button id="email" class="btn" type="button">Susisiekite el. paštu</button>
-        </div>
+          <div class="actions">
+            <a class="btn" href="#kontaktai">Susisiekite el. paštu</a>
+          </div>
+        </section>
+        <section id="kontaktai" class="card" style="margin-top:40px">
+          <h2>Kontaktai</h2>
 
-        <div class="fineprint">
+          <p>
+            <div class="actions">
+            El. paštas:
+            <button id="email" class="btn btn--sm" type="button">
+              Parodyti
+            </button>
+            </div>
+          </p>
+        </section>
+        <div class="fineprint" style="max-width:var(--max); margin:18px auto 0; padding:0 2px;">
           Centro veikla nėra medicininio pobūdžio ir nėra skirta medicininei diagnostikai ar gydymui.
         </div>
 
-        <div class="footer">
+        <div class="footer" style="max-width:var(--max); margin:10px auto 30px; padding:0 2px;">
           © <span id="y"></span> garsasvanduo.lt • Bioakustinės akvaterapijos ir tyrimų centras
         </div>
-      </section>
     </div>
   </main>
 
