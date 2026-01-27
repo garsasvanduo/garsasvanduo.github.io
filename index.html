@@ -247,6 +247,53 @@
     html {
       scroll-behavior: smooth;
     }
+    
+    .sep{
+      margin: 18px 0 10px;
+      display:flex;
+      justify-content:center;
+    }
+    .sep__svg{
+      width: min(720px, 92vw);
+      height: auto;
+    }
+    .sep__path{
+      fill: none;
+      stroke: rgba(255,255,255,.55);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 8px 18px rgba(0,0,0,.25));
+    }
+
+    .logo{
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display:grid;
+      place-items:center;
+      background: linear-gradient(135deg, rgba(255,255,255,.22), rgba(255,255,255,.08));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .mark{
+      width: 22px;
+      height: 22px;
+    }
+    .mark__ring{
+      fill: none;
+      stroke: rgba(255,255,255,.55);
+      stroke-width: 3;
+    }
+    .mark__wave{
+      fill: none;
+      stroke: rgba(255,255,255,.85);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
   </style>
 </head>
 
@@ -255,7 +302,31 @@
     <div class="wrap">
       <div class="topbar">
         <a class="brand" href="#">
-          <span class="logo" aria-hidden="true"></span>
+          <span class="logo" aria-hidden="true">
+            <svg
+              viewBox="0 0 64 32"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <path
+                d="
+                  M 0 16
+                  C 6 10, 12 22, 18 16
+                  C 22 13, 24 6, 26 16
+                  L 28 12
+                  L 30 20
+                  L 32 16
+                  C 40 10, 52 22, 64 16
+                "
+                fill="none"
+                stroke="#7fd1d8"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                opacity="0.85"
+              />
+            </svg>
+
+          </span>
           <span>Bioakustinės akvaterapijos ir tyrimų centras</span>
         </a>
         <span class="pill" title="Eksperimentinė veikla">
@@ -282,6 +353,28 @@
             <a class="btn" href="#kontaktai">Susisiekite el. paštu</a>
           </div>
         </section>
+        
+        <!-- separatoriaus SVG -->
+        <div class="sep" aria-hidden="true">
+          <svg viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="
+              M 0 60
+              C 50 40, 100 80, 150 60
+              C 180 50, 190 20, 200 60
+              L 210 40
+              L 220 80
+              L 230 60
+              C 300 40, 400 80, 600 60
+            "
+            stroke="#7fd1d8"
+            stroke-width="2"
+            fill="none"
+            opacity="0.7"
+          />
+        </svg>
+        </div>
+
         <section id="kontaktai" class="card" style="margin-top:40px">
           <h2>Kontaktai</h2>
 
